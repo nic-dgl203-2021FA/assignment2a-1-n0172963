@@ -107,14 +107,22 @@ i {
   color: #fff;
   font-size: 20px;
   text-align: center;
+  display: grid;
+  grid-template-columns: 10px 2fr 10px;
+  grid-template-rows: .5fr 1fr 20px;
+  grid-gap: 20px;
 }
 
 .hero img {
   margin: auto;
   padding-top: 1rem;
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
 
 .hero article {
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
 
 .hero h1 {
@@ -147,6 +155,9 @@ i {
   border-bottom: 1px solid #e0e5eb;
   box-shadow: 0px 1px 8px #223055;
   padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 input#navToggle {
@@ -291,6 +302,9 @@ nav .btn:hover {
 
 .tripList {
   list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-gap: 1rem;
 }
 
 .tripList li {
@@ -299,10 +313,14 @@ nav .btn:hover {
   border: solid 1px #dedede;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 1.8rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto minmax(140px, 1fr) auto;
 }
 
-.tripList h3,
-.tripList img {
+.tripList h3, .tripList img {
+  grid-row: 1/2;
+  grid-column: 1;
 }
 
 .tripList h3 {
@@ -312,6 +330,7 @@ nav .btn:hover {
   margin-bottom: 1rem;
   text-align: center;
   text-shadow: 1px 1px 2px rgba(51, 51, 51, 0.7);
+  align-self: end;
 }
 
 .trips a {
@@ -321,6 +340,7 @@ nav .btn:hover {
   height: 2rem;
   margin-top: 1rem;
   text-decoration: none;
+  display: flex;
 }
 
 .trips a:hover {
@@ -611,18 +631,27 @@ footer {
     background: url(../images/header1_lg.jpg) no-repeat center left;
     background-size: cover;
     text-align: left;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: .25fr 1fr  .25fr;
+    align-items: center;
   }
 
   .hero img {
     margin: 0 0 0 auto;
+    grid-row: 2/3;
   }
 
   .hero article {
     max-width: 1000px;
+    grid-column: 3/6;
   }
 
   /* ######### 10a-ii. Navigation, Large screen rules ######### */
   .navWrap {
+    display: grid;
+    grid-template-columns: 100px minmax(auto, 1100px);
+    justify-content: center;
+    height: auto;
   }
 
   .navToggleLabel {
@@ -634,6 +663,9 @@ footer {
   }
 
   nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   nav ul li a {
@@ -657,6 +689,9 @@ footer {
     letter-spacing: normal;
     text-shadow: none;
     box-shadow: none;
+    display: flex;
+    justify-content: center;
+    margin: auto;
   }
 
   nav.btn:hover {
@@ -666,10 +701,14 @@ footer {
 
   /* ######### 10a-iiI. Trips, Large screen rules ######### */
   .tripList {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 
   .trips article {
     width: 90%;
+    display: flex;
+    align-items: center;
+
   }
 
   .trips h1 {
@@ -677,6 +716,7 @@ footer {
   }
 
   .trips p {
+    flex: 3;
   }
 
   /* ######### 10a-iv. CTA summaries, Large screen rules ######### */
